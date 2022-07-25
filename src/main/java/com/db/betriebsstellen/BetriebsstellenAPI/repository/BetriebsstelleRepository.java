@@ -3,10 +3,10 @@ package com.db.betriebsstellen.BetriebsstellenAPI.repository;
 import com.db.betriebsstellen.BetriebsstellenAPI.entity.Betriebsstelle;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
+import org.springframework.stereotype.Repository;
 
-import java.util.List;
-
-public interface BetriebsstelleRepository extends CrudRepository<Betriebsstelle, Integer> {
+@Repository
+public interface BetriebsstelleRepository extends CrudRepository<Betriebsstelle, String> {
     @Query("select * from Betriebsstelle b where b.abbrev=:abbrev")
-    String findBetriebsstelleByAbbrev(String abbrev); //TODO check for duplicates
+    Betriebsstelle findBetriebsstelleByAbbrev(String abbrev); //TODO check for duplicates
 }
