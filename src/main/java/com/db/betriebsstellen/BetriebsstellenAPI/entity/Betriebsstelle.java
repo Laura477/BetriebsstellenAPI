@@ -1,36 +1,39 @@
 package com.db.betriebsstellen.BetriebsstellenAPI.entity;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 public class Betriebsstelle {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id", updatable = false, nullable = false)
     private Long id;
 
     private String abbrev;
     private String name;
     private String kurzname; //renamed from "short"
-    private String type;
-    private String status;
-    private String locationCode;
-    private String UIC;
-    private int RB;
-    private String validFrom;
-    private String validTill;
-    private boolean timeTableRelevant;
-    private boolean borderStation;
+    private String typk;
 
-    public Betriebsstelle(long id, String abbrev, String name, String kurzname, String type) {
+    private String typl;
+
+    private String status;
+    private String location_code;
+    private String niederlassung;
+    private String regionalbereich;
+    private String valid_from;
+    private String valid_till;
+    private String last_change;
+
+    public Betriebsstelle(long id, String abbrev, String name, String kurzname, String typk) {
         this.id = id;
         this.abbrev = abbrev;
         this.name = name;
         this.kurzname = kurzname;
-        this.type = type;
+        this.typk = typk;
+    }
+
+    public Betriebsstelle() {
     }
 
 
@@ -67,12 +70,20 @@ public class Betriebsstelle {
         this.kurzname = kurzname;
     }
 
-    public String getType() {
-        return type;
+    public String getTypk() {
+        return typk;
     }
 
-    public void setType(String type) {
-        this.type = type;
+    public void setTypk(String typk) {
+        this.typk = typk;
+    }
+
+    public String getTypl() {
+        return typl;
+    }
+
+    public void setTypl(String typl) {
+        this.typl = typl;
     }
 
     public String getStatus() {
@@ -83,59 +94,52 @@ public class Betriebsstelle {
         this.status = status;
     }
 
-    public String getLocationCode() {
-        return locationCode;
+    public String getLocation_code() {
+        return location_code;
     }
 
-    public void setLocationCode(String locationCode) {
-        this.locationCode = locationCode;
+    public void setLocation_code(String location_code) {
+        this.location_code = location_code;
     }
 
-    public String getUIC() {
-        return UIC;
+    public String getNiederlassung() {
+        return niederlassung;
     }
 
-    public void setUIC(String UIC) {
-        this.UIC = UIC;
+    public void setNiederlassung(String niederlassung) {
+        this.niederlassung = niederlassung;
     }
 
-    public int getRB() {
-        return RB;
+    public String getRegionalbereich() {
+        return regionalbereich;
     }
 
-    public void setRB(int RB) {
-        this.RB = RB;
+    public void setRegionalbereich(String regionalbereich) {
+        this.regionalbereich = regionalbereich;
     }
 
-    public String getValidFrom() {
-        return validFrom;
+    public String getValid_from() {
+        return valid_from;
     }
 
-    public void setValidFrom(String validFrom) {
-        this.validFrom = validFrom;
+    public void setValid_from(String valid_from) {
+        this.valid_from = valid_from;
     }
 
-    public String getValidTill() {
-        return validTill;
+    public String getValid_till() {
+        return valid_till;
     }
 
-    public void setValidTill(String validTill) {
-        this.validTill = validTill;
+    public void setValid_till(String valid_till) {
+        this.valid_till = valid_till;
     }
 
-    public boolean isTimeTableRelevant() {
-        return timeTableRelevant;
+    public String getLast_change() {
+        return last_change;
     }
 
-    public void setTimeTableRelevant(boolean timeTableRelevant) {
-        this.timeTableRelevant = timeTableRelevant;
+    public void setLast_change(String last_change) {
+        this.last_change = last_change;
     }
 
-    public boolean isBorderStation() {
-        return borderStation;
-    }
-
-    public void setBorderStation(boolean borderStation) {
-        this.borderStation = borderStation;
-    }
 }
