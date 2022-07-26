@@ -12,14 +12,14 @@ Connection points e.g. :
 
 #### Tools & Resources:
 - Java 18
-- Spring Boot (initial project package form https://start.spring.io/, with Maven & Java 18)
+- Spring Boot (initial project package form `https://start.spring.io/`, with Maven & Java 18)
   - Dependencies: H2 database, JPA, Swagger
 - IntelliJ
 - Github
-- Udacity Web Development with Java https://www.udacity.com/course/java-developer-nanodegree--nd035, https://gitlab.com/videolearning/udacity-java/-/tree/master/
+- Udacity Web Development with Java `https://www.udacity.com/course/java-developer-nanodegree--nd035`, `https://gitlab.com/videolearning/udacity-java/-/tree/master/`
 - Official documentation (`https://www.h2database.com/html/main.html`, `https://docs.spring.io/spring-boot/docs/2.4.12/reference/html/index.html`, `https://www.jetbrains.com/help/idea/spring-boot.html#spring-boot-endpoints`, ...)
 - API from Deutsche Bahn for reference: `https://developer.deutschebahn.com/store/apis/info?name=Betriebsstellen&version=v1&provider=DBOpenData&#!/default/get_betriebsstellen_abbrev`
-- Stackoverflow, www.geeksforgeeks.org, etc.
+- Stackoverflow, `www.geeksforgeeks.org`, etc.
 
 ##### Remaining ToDos:
 - (automatic) testing
