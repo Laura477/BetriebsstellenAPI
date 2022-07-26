@@ -11,6 +11,6 @@ import java.util.List;
 
 @Repository
 public interface BetriebsstelleRepository extends JpaRepository<Betriebsstelle, Long> {
-    @Query("select abbrev, name, kurzname from Betriebsstelle b where b.abbrev= ?1")
+    @Query(value = "select * from Betriebsstelle b where b.abbrev= ?1", nativeQuery = true)
     Betriebsstelle findByAbbrev(String abbrev); //checked externally that abbrev is unique
 }
