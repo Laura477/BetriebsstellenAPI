@@ -10,13 +10,18 @@ Connection points e.g. :
 - `http://localhost:8080//betriebsstellen/{abbrev}`: details of the Betriebsstelle with abbrevation abbrev in json format
 - `http://localhost:8080//swagger-ui.html#/`: Swagger UI for prettier API Documentation
 
-Tools & Resources:
-- IntelliJ
+#### Tools & Resources:
+- Java 18
 - Spring Boot (initial project package form https://start.spring.io/, with Maven & Java 18)
   - Dependencies: H2 database, JPA, Swagger
-- Udacity Web Development with Java https://www.udacity.com/course/java-developer-nanodegree--nd035
+- IntelliJ
+- Github
+- Udacity Web Development with Java https://www.udacity.com/course/java-developer-nanodegree--nd035, https://gitlab.com/videolearning/udacity-java/-/tree/master/
+- Official documentation (`https://www.h2database.com/html/main.html`, `https://docs.spring.io/spring-boot/docs/2.4.12/reference/html/index.html`, `https://www.jetbrains.com/help/idea/spring-boot.html#spring-boot-endpoints`, ...)
+- API from Deutsche Bahn for reference: `https://developer.deutschebahn.com/store/apis/info?name=Betriebsstellen&version=v1&provider=DBOpenData&#!/default/get_betriebsstellen_abbrev`
+- Stackoverflow, www.geeksforgeeks.org, etc.
 
-ToDos:
-- automatic tests
+##### Remaining ToDos:
+- (automatic) testing
 - improve/automate csv import
-- provide more options (different get options, plus post/put/delete etc.)
+- provide more endpoint options (different get options, plus post/put/delete etc.)
