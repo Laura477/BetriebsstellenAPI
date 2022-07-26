@@ -16,6 +16,10 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
+/**
+ * Controller that provides GET requests for all Betriebsstellen and to find Betriebsstellen by abbreviation.
+ *
+ */
 @RestController
 @ApiResponses(value = {
         @ApiResponse(code=400, message = "This is a bad request, please follow the API documentation for the proper request format."),
@@ -37,15 +41,9 @@ public class BetriebsstelleController {
         return new ResponseEntity<>(list, HttpStatus.OK);
     }
 
-//    @GetMapping(value="/betriebsstellen/{abbrev}", produces = "application/json")
-//    public ResponseEntity<Betriebsstelle> getBetriebsstelleByAbbrev(@PathVariable("abbrev") String abbrev){
-//        Betriebsstelle betriebsstelle = betriebsstelleService.retrieveBetriebsstelle(abbrev);
-//        return new ResponseEntity<>(betriebsstelle, HttpStatus.OK);
-//    }
-
     @GetMapping(value="/betriebsstellen/{abbrev}", produces = "application/json")
     public ResponseEntity<Betriebsstelle> getBetriebsstelleByAbbrev(@PathVariable String abbrev){
-        String abbrev_upper = abbrev.toUpperCase();
+        String abbrev_upper = abbrev.toUpperCase(); //necessary because all abbreviations are in uppercase in the data!
         return new ResponseEntity<>(betriebsstelleService.retrieveBetriebsstelle(abbrev_upper), HttpStatus.OK);
     }
 

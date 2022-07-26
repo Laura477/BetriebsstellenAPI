@@ -2,6 +2,9 @@ package com.db.betriebsstellen.BetriebsstellenAPI.entity;
 
 import javax.persistence.*;
 
+/**
+ * Betriebsstelle Entity with all the attributes of the csv file and getter and setter and default constructor.
+ */
 @Entity
 public class Betriebsstelle {
 
@@ -10,12 +13,10 @@ public class Betriebsstelle {
     private Long id;
 
     private String abbrev;
-    private String name;
-    private String kurzname; //renamed from "short"
-    private String typk;
-
-    private String typl;
-
+    private String name_lang;
+    private String name_kurz;
+    private String typ_kurz;
+    private String typ_lang;
     private String status;
     private String location_code;
     private String niederlassung;
@@ -30,26 +31,10 @@ public class Betriebsstelle {
 //        this.name = name;
 //        this.kurzname = kurzname;
 //        this.typk = typk;
-//
-//
-//        PLC varchar,
-//        RL100Code varchar,
-//        RL100Langname varchar,
-//        RL100Kurzname varchar,
-//        TypKurz varchar,
-//        TypLang varchar,
-//        Betriebszustand varchar,
-//        DatumAb date,
-//        DatumBis date,
-//        Niederlassung varchar,
-//        Regionalbereich varchar,
-//        LetzteAenderung varchar
-//
 //    }
 
     public Betriebsstelle() {
     }
-
 
     public long getId() {
         return id;
@@ -59,7 +44,6 @@ public class Betriebsstelle {
         this.id = id;
     }
 
-
     public String getAbbrev() {
         return abbrev;
     }
@@ -68,36 +52,36 @@ public class Betriebsstelle {
         this.abbrev = abbrev;
     }
 
-    public String getName() {
-        return name;
+    public String getName_lang() {
+        return name_lang;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setName_lang(String name_lang) {
+        this.name_lang = name_lang;
     }
 
-    public String getKurzname() {
-        return kurzname;
+    public String getName_kurz() {
+        return name_kurz;
     }
 
-    public void setKurzname(String kurzname) {
-        this.kurzname = kurzname;
+    public void setName_kurz(String name_kurz) {
+        this.name_kurz = name_kurz;
     }
 
-    public String getTypk() {
-        return typk;
+    public String getTyp_kurz() {
+        return typ_kurz;
     }
 
-    public void setTypk(String typk) {
-        this.typk = typk;
+    public void setTyp_kurz(String typ_kurz) {
+        this.typ_kurz = typ_kurz;
     }
 
-    public String getTypl() {
-        return typl;
+    public String getTyp_lang() {
+        return typ_lang;
     }
 
-    public void setTypl(String typl) {
-        this.typl = typl;
+    public void setTyp_lang(String typ_lang) {
+        this.typ_lang = typ_lang;
     }
 
     public String getStatus() {
