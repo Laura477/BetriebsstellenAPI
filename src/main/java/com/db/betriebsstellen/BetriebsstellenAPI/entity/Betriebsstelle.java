@@ -7,7 +7,6 @@ public class Betriebsstelle {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id", updatable = false, nullable = false)
     private Long id;
 
     private String abbrev;
@@ -25,13 +24,28 @@ public class Betriebsstelle {
     private String valid_till;
     private String last_change;
 
-    public Betriebsstelle(long id, String abbrev, String name, String kurzname, String typk) {
-        this.id = id;
-        this.abbrev = abbrev;
-        this.name = name;
-        this.kurzname = kurzname;
-        this.typk = typk;
-    }
+//    public Betriebsstelle(Long id, String abbrev, String name, String kurzname, String typk, String location_code, String typl, ) {
+//        this.id = id;
+//        this.abbrev = abbrev;
+//        this.name = name;
+//        this.kurzname = kurzname;
+//        this.typk = typk;
+//
+//
+//        PLC varchar,
+//        RL100Code varchar,
+//        RL100Langname varchar,
+//        RL100Kurzname varchar,
+//        TypKurz varchar,
+//        TypLang varchar,
+//        Betriebszustand varchar,
+//        DatumAb date,
+//        DatumBis date,
+//        Niederlassung varchar,
+//        Regionalbereich varchar,
+//        LetzteAenderung varchar
+//
+//    }
 
     public Betriebsstelle() {
     }

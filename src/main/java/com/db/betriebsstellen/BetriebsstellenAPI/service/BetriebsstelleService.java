@@ -6,6 +6,5 @@ import java.util.List;
 
 public interface BetriebsstelleService {
     Betriebsstelle retrieveBetriebsstelle(String abbrev);
-
     List<Betriebsstelle> retrieveBetriebsstellen();
 }

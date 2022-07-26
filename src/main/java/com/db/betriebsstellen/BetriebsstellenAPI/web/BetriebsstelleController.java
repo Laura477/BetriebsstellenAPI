@@ -5,10 +5,13 @@ import com.db.betriebsstellen.BetriebsstellenAPI.service.BetriebsstelleService;
 import io.swagger.annotations.ApiResponse;
 import io.swagger.annotations.ApiResponses;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.repository.query.Param;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
@@ -28,15 +31,24 @@ public class BetriebsstelleController {
         this.betriebsstelleService = betriebsstelleService;
     }
 
-    @GetMapping("/betriebsstellen")
+    @GetMapping(value="/betriebsstellen", produces = "application/json" )
     public ResponseEntity<List<Betriebsstelle>> getAllBetriebsstellen(){
         List<Betriebsstelle> list = betriebsstelleService.retrieveBetriebsstellen();
         return new ResponseEntity<>(list, HttpStatus.OK);
     }
 
-    @GetMapping("/betriebsstelle/{abbrev}")
-    public ResponseEntity<Betriebsstelle> getBreedById(@PathVariable String abbrev){
-        Betriebsstelle betriebsstelle = betriebsstelleService.retrieveBetriebsstelle(abbrev);
-        return new ResponseEntity<>(betriebsstelle, HttpStatus.OK);
+//    @GetMapping(value="/betriebsstellen/{abbrev}", produces = "application/json")
+//    public ResponseEntity<Betriebsstelle> getBetriebsstelleByAbbrev(@PathVariable("abbrev") String abbrev){
+//        Betriebsstelle betriebsstelle = betriebsstelleService.retrieveBetriebsstelle(abbrev);
+//        return new ResponseEntity<>(betriebsstelle, HttpStatus.OK);
+//    }
+
+    @GetMapping(value="/betriebsstellen/{abbrev}", produces = "application/json")
+    public ResponseEntity<Betriebsstelle> getBetriebsstelleByAbbrev(@PathVariable String abbrev){
+        String abbrev_upper = abbrev.toUpperCase();
+        return new ResponseEntity<>(betriebsstelleService.retrieveBetriebsstelle(abbrev_upper), HttpStatus.OK);
     }
+
+
+
 }

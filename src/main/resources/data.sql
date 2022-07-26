@@ -13,3 +13,5 @@ CREATE TABLE BETRIEBSSTELLE AS SELECT PLC as location_code,
                                LetzteAenderung as last_change
     FROM CSVREAD('classpath:/DBNetz-Betriebsstellenverzeichnis-Stand2021-10.csv', null , 'fieldSeparator=;',  'charset=UTF-8' );
 ALTER TABLE betriebsstelle ADD COLUMN id IDENTITY;
+
+
